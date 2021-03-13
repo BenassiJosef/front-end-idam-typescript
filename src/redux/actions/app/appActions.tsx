@@ -1,0 +1,1 @@
+export const IS_APP : string  = "IS_APP";

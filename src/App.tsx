@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import {useEffect} from 'react'
 import './App.css';
+import {RootState} from "./redux/reducers/rootReducer"
+import { connect } from "react-redux";
+import appCreatorActionOne from "./redux/actions/app/appActionsCreator"
 
-function App() {
+function App({dispatchApp,appResp}:any) {
+  
+  useEffect(()=>{
+    console.log(appResp)
+  },[appResp])
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <button onClick={()=>{dispatchApp("Josef")}}>Click Me</button>
       </header>
     </div>
   );
 }
 
-export default App;
+export const mapStateToProps = (state: RootState) => {
+  return {
+    appResp: state.app.isApp,
+  };
+};
+
+const mapDispatchToProps = (dispatch:any) => {
+  return {
+    dispatchApp(payload:any){
+      return appCreatorActionOne(dispatch, payload)
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
