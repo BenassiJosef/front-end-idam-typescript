@@ -2,35 +2,28 @@ import React from 'react';
 import {useEffect} from 'react'
 import './App.css';
 import {RootState} from "./redux/reducers/rootReducer"
-import { connect } from "react-redux";
 import appCreatorActionOne from "./redux/actions/app/appActionsCreator"
+import { useSelector,useDispatch } from 'react-redux'
 
-function App({dispatchApp,appResp}:any) {
+type appResponse = {
+  response: boolean
+}
+
+function App() {
+  
+  const appResp :appResponse = useSelector((state:RootState) => state.app.isApp ?? false)
+  const dispatch = useDispatch()
   
   useEffect(()=>{
-    console.log(appResp)
+    console.log(appResp.response)
   },[appResp])
+  
   return (
     <div className="App">
       <header className="App-header">
-      <button onClick={()=>{dispatchApp("Josef")}}>Click Me</button>
+      <button onClick={()=>{appCreatorActionOne(dispatch,false)}}>Click Me</button>
       </header>
     </div>
   );
 }
-
-export const mapStateToProps = (state: RootState) => {
-  return {
-    appResp: state.app.isApp,
-  };
-};
-
-const mapDispatchToProps = (dispatch:any) => {
-  return {
-    dispatchApp(payload:any){
-      return appCreatorActionOne(dispatch, payload)
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
