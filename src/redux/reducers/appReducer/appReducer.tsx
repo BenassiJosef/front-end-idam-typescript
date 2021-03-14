@@ -1,21 +1,23 @@
-import * as actions from "../../actions/app/appActions";
+import { isAppState, AppActionsTypes,CHANGE_APP_STATUS  } from "../../actions/app/appActions";
 
-const initialState = {
-  isApp: {response:false},
+const initialState: isAppState = {
+  appState: false,
 };
 
 const appReducer = (
   state = initialState,
-  action = { type:"", payload: {} }
+  action: AppActionsTypes 
 ) => {
-  if (action.type === actions.IS_APP) {
-    return {
-      ...state,
-      isApp: action.payload,
-    };
-  }
+  switch (action.type) {
+    case CHANGE_APP_STATUS:
+      return {
+        ...state,
+        appState: action.payload,
+      };
 
-  return state;
+    default:
+      return state
+  }
 };
 
 export default appReducer;

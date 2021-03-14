@@ -1,10 +1,8 @@
-import { IS_APP } from "./appActions";
+import { isAppState, CHANGE_APP_STATUS, AppActionsTypes  } from "./appActions";
 
-export default function appCreatorActionOne( dispatch:Function , payload:boolean) {
-  console.log(payload, " we made it")
-  let response  = true
+export default function appCreatorActionOne( dispatch:Function , payload:isAppState) : AppActionsTypes{
   return dispatch({
-    type: IS_APP,
-    payload:{response} ,
+    type: CHANGE_APP_STATUS,
+    payload:{...payload} ,
   });
 }

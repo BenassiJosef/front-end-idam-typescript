@@ -4,24 +4,23 @@ import './App.css';
 import {RootState} from "./redux/reducers/rootReducer"
 import appCreatorActionOne from "./redux/actions/app/appActionsCreator"
 import { useSelector,useDispatch } from 'react-redux'
+import { isAppState} from "./redux/actions/app/appActions";
 
-type appResponse = {
-  response: boolean
-}
+
 
 function App() {
   
-  const appResp :appResponse = useSelector((state:RootState) => state.app.isApp)
+  const appResp:isAppState = useSelector((state:RootState) => state.app)
   const dispatch = useDispatch()
-  
+
   useEffect(()=>{
-    console.log(appResp.response)
+    console.log(appResp.appState)
   },[appResp])
   
   return (
     <div className="App">
       <header className="App-header">
-      <button onClick={()=>{appCreatorActionOne(dispatch,false)}}>Click Me</button>
+      <button onClick={()=>{appCreatorActionOne(dispatch,{appState: true})}}>Click Me</button>
       </header>
     </div>
   );
