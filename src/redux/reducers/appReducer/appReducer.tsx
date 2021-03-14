@@ -1,7 +1,7 @@
 import * as actions from "../../actions/app/appActions";
 
 const initialState = {
-  isApp: false,
+  isApp: {response:false},
 };
 
 const appReducer = (

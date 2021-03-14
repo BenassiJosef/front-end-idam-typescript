@@ -11,7 +11,7 @@ type appResponse = {
 
 function App() {
   
-  const appResp :appResponse = useSelector((state:RootState) => state.app.isApp ?? false)
+  const appResp :appResponse = useSelector((state:RootState) => state.app.isApp)
   const dispatch = useDispatch()
   
   useEffect(()=>{
