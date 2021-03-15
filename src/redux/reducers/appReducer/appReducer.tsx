@@ -1,13 +1,14 @@
-import { isAppState, AppActionsTypes,CHANGE_APP_STATUS  } from "../../actions/app/appActions";
+import {
+  isAppState,
+  AppActionsTypes,
+  CHANGE_APP_STATUS,
+} from "../../actions/app/appActions";
 
 const initialState: isAppState = {
   appState: false,
 };
 
-const appReducer = (
-  state = initialState,
-  action: AppActionsTypes 
-) => {
+const appReducer = (state = initialState, action: AppActionsTypes) => {
   switch (action.type) {
     case CHANGE_APP_STATUS:
       return {
@@ -16,7 +17,7 @@ const appReducer = (
       };
 
     default:
-      return state
+      return state;
   }
 };
 
