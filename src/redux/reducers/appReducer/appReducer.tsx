@@ -1,19 +1,22 @@
 import {
-  isAppState,
+  IsAppState,
   AppActionsTypes,
   CHANGE_APP_STATUS,
 } from "../../actions/app/appActions";
 
-const initialState: isAppState = {
+const initialState: IsAppState = {
   appState: false,
 };
 
-const appReducer = (state = initialState, action: AppActionsTypes) => {
+const appReducer = (
+  state = initialState,
+  action: AppActionsTypes
+): IsAppState => {
   switch (action.type) {
     case CHANGE_APP_STATUS:
       return {
         ...state,
-        appState: action.payload,
+        ...action.payload,
       };
 
     default:

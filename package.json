@@ -10,12 +10,8 @@
     "@types/node": "^12.20.5",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
     "axios": "^0.21.1",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-jest": "^24.3.1",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "joi": "^17.4.0",
     "prettier": "^2.2.1",
@@ -45,8 +41,6 @@
       "plugin:@typescript-eslint/recommended",
       "plugin:jest/recommended",
       "prettier",
-      "prettier/react",
-      "prettier/@typescript-eslint",
       "plugin:prettier/recommended"
     ],
     "plugins": [
@@ -96,6 +90,11 @@
   },
   "devDependencies": {
     "@types/react-redux": "^7.1.16",
-    "@types/redux-thunk": "^2.1.0"
+    "@types/redux-thunk": "^2.1.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "12.3.1",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-import-resolver-typescript": "2.4.0",
+    "eslint-plugin-flowtype": "5.4.0"
   }
 }

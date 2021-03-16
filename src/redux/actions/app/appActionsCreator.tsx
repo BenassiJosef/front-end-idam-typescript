@@ -1,8 +1,10 @@
-import { isAppState, CHANGE_APP_STATUS, AppActionsTypes } from "./appActions";
+import { IsAppState, CHANGE_APP_STATUS, AppActionsTypes } from "./appActions";
+
+type DispatchAppStatus = (arg: AppActionsTypes) => AppActionsTypes;
 
 export default function appCreatorActionOne(
-  dispatch: Function,
-  payload: isAppState
+  dispatch: DispatchAppStatus,
+  payload: IsAppState
 ): AppActionsTypes {
   return dispatch({
     type: CHANGE_APP_STATUS,
