@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
 import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
+import configureMockStore from "redux-mock-store";
+import App from "./App";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
