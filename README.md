@@ -19,6 +19,14 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run format`
+
+Runs prettier against code base and cleans up formatting
+
+### `npm run lint`
+
+Runs es-lint configurations ("eslintConfig") found in package.json and will prompt if there are errors or warnings that need to be fixed.
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
