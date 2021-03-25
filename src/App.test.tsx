@@ -1,5 +1,5 @@
 import React from "react";
-import { render} from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
@@ -15,5 +15,5 @@ test("renders app", () => {
       <App />
     </Provider>
   );
-  expect(app).toMatchSnapshot()
+  expect(app).toMatchSnapshot();
 });
