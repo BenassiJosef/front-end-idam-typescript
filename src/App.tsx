@@ -1,28 +1,15 @@
-import React, { useEffect } from "react";
-import "./App.css";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "./redux/reducers/rootReducer";
-import appCreatorActionOne from "./redux/actions/app/appActionsCreator";
-import { IsAppState } from "./redux/actions/app/appActions";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Register from "./pages/register/register";
 
 function App(): JSX.Element {
-  const appResp: IsAppState = useSelector((state: RootState) => state.app);
-  const dispatch = useDispatch();
-
-  useEffect(() => {}, [appResp]);
-
   return (
     <div className="App">
-      <header className="App-header">
-        <button
-          type="button"
-          onClick={() => {
-            appCreatorActionOne(dispatch, { appState: true });
-          }}
-        >
-          Click Me
-        </button>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path="/register" component={Register} />
+        </Switch>
+      </Router>
     </div>
   );
 }

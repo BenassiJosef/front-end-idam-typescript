@@ -1,11 +1,11 @@
-import * as actions from "./appActionsCreator";
-import { CHANGE_APP_STATUS } from "./appActions";
+import * as actions from "./registerActionsCreator";
+import { CHANGE_REGISTER_STATUS } from "./registerActions";
 
 describe("update application state", () => {
   it("should update the app state", () => {
-    const payload = { appState: true };
+    const payload = { registerState: true };
     const expectedAction = {
-      type: CHANGE_APP_STATUS,
+      type: CHANGE_REGISTER_STATUS,
       payload,
     };
     const myMock = jest.fn();

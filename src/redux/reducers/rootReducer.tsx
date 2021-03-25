@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import appReducer from "./appReducer/appReducer";
+import registerReducer from "./registerReducer/registerReducer";
 
 const rootReducer = combineReducers({
-  app: appReducer,
+  register: registerReducer,
 });
 
 type NewType = typeof rootReducer;
