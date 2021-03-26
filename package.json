@@ -38,7 +38,8 @@
     "format-folders": "prettier --write src/**/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "e2e": "cd e2e && jest"
   },
   "eslintConfig": {
     "extends": [
@@ -117,6 +118,7 @@
     "eslint-config-airbnb-typescript": "12.3.1",
     "eslint-config-prettier": "8.1.0",
     "eslint-import-resolver-typescript": "2.4.0",
-    "eslint-plugin-flowtype": "5.4.0"
+    "eslint-plugin-flowtype": "5.4.0",
+    "playwright": "^1.10.0"
   }
 }
