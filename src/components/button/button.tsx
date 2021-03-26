@@ -1,18 +1,106 @@
-import React from "react";
 import styled from "styled-components";
+import { PRIMARY_COLOUR, SECONDARY_COLOUR } from "../../constants";
 
-const Btn = styled.button`
-  background-color: red;
-  width: 500px;
-  height: 200px;
-`;
-
-interface Props {
-  label: string;
+export interface Props {
+  intent: "primary" | "secondary" | "link";
+  disabled: boolean;
 }
 
-const Button = ({ label }: Props): JSX.Element => {
-  return <Btn>{label}</Btn>;
-};
+export const Button = styled.button.attrs(({ intent }: Props) => ({
+  "data-test": `${intent}-button`,
+}))`
+  ${({ intent }: Props) => {
+    switch (intent) {
+      case "primary":
+        return SECONDARY_COLOUR;
+      case "secondary":
+        return SECONDARY_COLOUR;
+      case "link":
+        return "none";
+      default:
+        return PRIMARY_COLOUR;
+    }
+  }};
 
-export default Button;
+  color: ${({ intent }: Props) => {
+    switch (intent) {
+      case "primary":
+        return PRIMARY_COLOUR;
+      case "secondary":
+        return SECONDARY_COLOUR;
+      case "link":
+        return PRIMARY_COLOUR;
+      default:
+        return SECONDARY_COLOUR;
+    }
+  }};
+
+  border-color: ${({ intent }: Props) => {
+    switch (intent) {
+      case "primary":
+      case "secondary":
+        return PRIMARY_COLOUR;
+      case "link":
+        return SECONDARY_COLOUR;
+      default:
+        return SECONDARY_COLOUR;
+    }
+  }};
+
+  padding: ${({ intent }: Props) => {
+    switch (intent) {
+      case "primary":
+        return "9px 20px 8px 20px";
+      case "secondary":
+        return "9px 20px 8px 20px";
+      case "link":
+        return 0;
+      default:
+        return "9px 20px 8px 20px";
+    }
+  }};
+
+  border: ${({ intent }: Props) => {
+    switch (intent) {
+      case "primary":
+        return `solid 1px ${PRIMARY_COLOUR}`;
+      case "secondary":
+        return `solid 1px ${SECONDARY_COLOUR}`;
+      case "link":
+        return "none";
+      default:
+        return "inherit";
+    }
+  }};
+
+  text-align: ${({ intent }: Props) => {
+    switch (intent) {
+      case "primary":
+        return "center";
+      case "secondary":
+        return "center";
+      case "link":
+        return "left";
+      default:
+        return "inherit";
+    }
+  }};
+
+  :focus {
+    outline: 0;
+  }
+  opacity: ${({ disabled }: Props) => (disabled === true ? 0.6 : 1.0)};
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  border-radius: 3px;
+  margin-right: 16px;
+
+  :hover {
+    cursor: ${({ disabled }: Props) =>
+      disabled === true ? "not-allowed" : "pointer"};
+  }
+`;

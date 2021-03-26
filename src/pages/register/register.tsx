@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/reducers/rootReducer";
 import RegisterAction from "../../redux/actions/registerActions/registerActionsCreator";
 import { IsRegisterState } from "../../redux/actions/registerActions/registerActions";
-import Button from "../../components/button/button";
+import { Button } from "../../components/button/button";
 
 const Register = (): JSX.Element => {
   const registerResp: IsRegisterState = useSelector(
@@ -24,7 +24,7 @@ const Register = (): JSX.Element => {
         >
           Register Page
         </button>
-        <Button label="Button works" />
+        <Button intent="primary" disabled={false} />
       </header>
     </div>
   );

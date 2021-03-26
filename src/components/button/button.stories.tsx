@@ -1,17 +1,18 @@
-import React, { ComponentProps } from "react";
+import React from "react";
 import { Story } from "@storybook/react";
-import Button from "./button";
+import { Button, Props } from "./button";
 
 export default {
-  title: "FirstStoryButton",
+  title: "Button",
   component: Button,
 };
 
-const Template: Story<ComponentProps<typeof Button>> = () => {
-  return <Button label="First Story Button" />;
+const Template: Story<Props> = ({ intent, disabled }: Props) => {
+  return <Button intent={intent} disabled={disabled} />;
 };
 
 export const FirstStory = Template.bind({});
 FirstStory.args = {
-  label: "Button",
+  intent: "primary",
+  disabled: false,
 };
