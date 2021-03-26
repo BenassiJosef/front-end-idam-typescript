@@ -14,11 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run format`
 
 Runs prettier against code base and cleans up formatting
@@ -26,6 +21,19 @@ Runs prettier against code base and cleans up formatting
 ### `npm run lint`
 
 Runs es-lint configurations ("eslintConfig") found in package.json and will prompt if there are errors or warnings that need to be fixed.
+
+### `npm run storybook`
+
+Runs Storybook - which is an open source tool for developing UI components in isolation for React
+
+### `npm test`
+
+Launches the unit test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run e2e`
+
+Launches the e2e Playwright (microsoft) intergration test runner.
 
 ### `npm run build`
 
