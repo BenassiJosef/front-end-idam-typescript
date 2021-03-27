@@ -1,0 +1,1 @@
+export const globals = {baseURL: "http://localhost:3000"}
