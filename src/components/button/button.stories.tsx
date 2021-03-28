@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { Button, Props } from "./button";
 
 export default {
-  title: "IDAM/Button",
+  title: "IDAM/Components/Button",
   component: Button,
 } as Meta;
 
