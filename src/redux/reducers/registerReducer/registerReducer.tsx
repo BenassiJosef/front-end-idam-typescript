@@ -5,7 +5,8 @@ import {
 } from "../../actions/registerActions/registerActions";
 
 const initialState: IsRegisterState = {
-  registerState: false,
+  email: "",
+  password: "",
 };
 
 const registerReducer = (

@@ -6,7 +6,7 @@ import {
 
 type DispatchAppStatus = (arg: RegisterActionsTypes) => RegisterActionsTypes;
 
-const RegisterAction = (
+const registerActionCreator = (
   dispatch: DispatchAppStatus,
   payload: IsRegisterState
 ): RegisterActionsTypes => {
@@ -16,4 +16,4 @@ const RegisterAction = (
   });
 };
 
-export default RegisterAction;
+export default registerActionCreator;

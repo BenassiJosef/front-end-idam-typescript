@@ -3,7 +3,7 @@ import { CHANGE_REGISTER_STATUS } from "./registerActions";
 
 describe("update application state", () => {
   it("should update the app state", () => {
-    const payload = { registerState: true };
+    const payload = { email: "test@test.com", password: "test12345678" };
     const expectedAction = {
       type: CHANGE_REGISTER_STATUS,
       payload,

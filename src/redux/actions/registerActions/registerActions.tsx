@@ -1,5 +1,6 @@
 export interface IsRegisterState {
-  registerState: boolean;
+  email: string;
+  password: string;
 }
 
 export const CHANGE_REGISTER_STATUS = "CHANGE_REGISTER_STATUS ";

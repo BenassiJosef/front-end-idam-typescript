@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/reducers/rootReducer";
-import RegisterAction from "../../redux/actions/registerActions/registerActionsCreator";
+import registerActionCreator from "../../redux/actions/registerActions/registerActionsCreator";
 import { IsRegisterState } from "../../redux/actions/registerActions/registerActions";
+import useFormFields from "../../hooks/useFormFields";
 import { Button } from "../../components/button/button";
 
 const Register = (): JSX.Element => {
@@ -11,22 +13,48 @@ const Register = (): JSX.Element => {
   );
   const dispatch = useDispatch();
 
-  useEffect(() => {}, [registerResp]);
+  const { formFields, createChangeHandler } = useFormFields({
+    email: "",
+    password: "",
+  });
 
+  useEffect(() => {
+    console.log(registerResp);
+  }, [registerResp]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    registerActionCreator(dispatch, formFields);
+  };
   return (
-    <div>
-      <header>
-        <button
-          type="button"
-          onClick={() => {
-            RegisterAction(dispatch, { registerState: true });
-          }}
-        >
-          Register Page
-        </button>
-        <Button intent="primary" disabled={false} />
-      </header>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="email">
+          Email
+          <input
+            type="email"
+            id="email"
+            value={formFields.email}
+            onChange={createChangeHandler("email")}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="password">
+          Password
+          <input
+            type="password"
+            id="password"
+            value={formFields.password}
+            onChange={createChangeHandler("password")}
+          />
+        </label>
+        <Button type="submit" intent="primary" disabled={false}>
+          {" "}
+          Submit
+        </Button>
+      </div>
+    </form>
   );
 };
 export default Register;

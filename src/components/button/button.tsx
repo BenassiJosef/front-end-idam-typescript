@@ -9,10 +9,10 @@ export interface Props {
 export const Button = styled.button.attrs(({ intent }: Props) => ({
   "data-test": `${intent}-button`,
 }))`
-  ${({ intent }: Props) => {
+  background-color: ${({ intent }: Props) => {
     switch (intent) {
       case "primary":
-        return SECONDARY_COLOUR;
+        return PRIMARY_COLOUR;
       case "secondary":
         return SECONDARY_COLOUR;
       case "link":
@@ -25,9 +25,9 @@ export const Button = styled.button.attrs(({ intent }: Props) => ({
   color: ${({ intent }: Props) => {
     switch (intent) {
       case "primary":
-        return PRIMARY_COLOUR;
-      case "secondary":
         return SECONDARY_COLOUR;
+      case "secondary":
+        return PRIMARY_COLOUR;
       case "link":
         return PRIMARY_COLOUR;
       default:
@@ -39,9 +39,9 @@ export const Button = styled.button.attrs(({ intent }: Props) => ({
     switch (intent) {
       case "primary":
       case "secondary":
-        return PRIMARY_COLOUR;
-      case "link":
         return SECONDARY_COLOUR;
+      case "link":
+        return PRIMARY_COLOUR;
       default:
         return SECONDARY_COLOUR;
     }
@@ -95,9 +95,7 @@ export const Button = styled.button.attrs(({ intent }: Props) => ({
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  letter-spacing: normal;
   border-radius: 3px;
-  margin-right: 16px;
 
   :hover {
     cursor: ${({ disabled }: Props) =>
