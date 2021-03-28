@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="sc-bdfBwQ hnuJyO"
+        class="sc-bdfBwQ dnaRID"
         data-test="primary-button"
       >
         Test me
@@ -15,7 +15,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="sc-bdfBwQ hnuJyO"
+      class="sc-bdfBwQ dnaRID"
       data-test="primary-button"
     >
       Test me
