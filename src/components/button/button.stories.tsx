@@ -1,18 +1,22 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { Story, Meta } from "@storybook/react";
 import { Button, Props } from "./button";
 
 export default {
-  title: "Button",
+  title: "IDAM/Button",
   component: Button,
-};
+} as Meta;
 
 const Template: Story<Props> = ({ intent, disabled }: Props) => {
-  return <Button intent={intent} disabled={disabled} />;
+  return (
+    <Button intent={intent} disabled={disabled}>
+      Button
+    </Button>
+  );
 };
 
-export const FirstStory = Template.bind({});
-FirstStory.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   intent: "primary",
   disabled: false,
 };

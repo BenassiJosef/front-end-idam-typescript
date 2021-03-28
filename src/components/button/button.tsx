@@ -9,7 +9,7 @@ export interface Props {
 export const Button = styled.button.attrs(({ intent }: Props) => ({
   "data-test": `${intent}-button`,
 }))`
-  background-color: ${({ intent }: Props) => {
+  background: ${({ intent }: Props) => {
     switch (intent) {
       case "primary":
         return PRIMARY_COLOUR;
@@ -35,18 +35,6 @@ export const Button = styled.button.attrs(({ intent }: Props) => ({
     }
   }};
 
-  border-color: ${({ intent }: Props) => {
-    switch (intent) {
-      case "primary":
-      case "secondary":
-        return SECONDARY_COLOUR;
-      case "link":
-        return PRIMARY_COLOUR;
-      default:
-        return SECONDARY_COLOUR;
-    }
-  }};
-
   padding: ${({ intent }: Props) => {
     switch (intent) {
       case "primary":
@@ -65,7 +53,7 @@ export const Button = styled.button.attrs(({ intent }: Props) => ({
       case "primary":
         return `solid 1px ${PRIMARY_COLOUR}`;
       case "secondary":
-        return `solid 1px ${SECONDARY_COLOUR}`;
+        return `solid 1px ${PRIMARY_COLOUR}`;
       case "link":
         return "none";
       default:
