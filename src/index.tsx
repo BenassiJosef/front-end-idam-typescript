@@ -8,7 +8,7 @@ import App from "./App";
 import store from "./redux/store/store";
 
 if (process.env.NODE_ENV === "development") {
-  require("./mocks/browser");
+  require("./__msw__/browser");
 }
 
 ReactDOM.render(
