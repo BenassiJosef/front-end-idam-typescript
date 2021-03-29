@@ -1,17 +1,21 @@
-import * as actions from "./registerActionsCreator";
+import registerActionCreator from "./registerActionsCreator";
 import { CHANGE_REGISTER_STATUS } from "./registerActions";
+import mockAxios from "jest-mock-axios";
 
-describe("update application state", () => {
-  it("should update the app state", () => {
+describe("post registration info to server", () => {
+  it("should make post request", () => {
     const payload = { email: "test@test.com", password: "test12345678" };
     const expectedAction = {
       type: CHANGE_REGISTER_STATUS,
       payload,
     };
+    const url = "http://testUrl/api";
     const myMock = jest.fn();
     myMock.mockReturnValueOnce(expectedAction);
-    expect(actions.default(myMock, payload)).toEqual(expectedAction);
-    actions.default(myMock, payload);
-    expect(myMock).toHaveBeenCalled();
+    registerActionCreator(myMock, payload, url);
+    expect(mockAxios.post).toHaveBeenCalledWith(`${url}/register`, {
+      email: payload.email,
+      password: payload.password,
+    });
   });
 });

@@ -5,6 +5,7 @@ import registerActionCreator from "../../redux/actions/registerActions/registerA
 import { IsRegisterState } from "../../redux/actions/registerActions/registerActions";
 import useFormFields from "../../hooks/useFormFields";
 import { Button } from "../../components/button/button";
+import IdamApiUrl from "../../utils";
 
 const Register = (): JSX.Element => {
   const registerResp: IsRegisterState = useSelector(
@@ -18,12 +19,12 @@ const Register = (): JSX.Element => {
   });
 
   useEffect(() => {
-    console.log(registerResp);
+    // console.log(registerResp);
   }, [registerResp]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    registerActionCreator(dispatch, formFields);
+    registerActionCreator(dispatch, formFields, IdamApiUrl());
   };
   return (
     <form onSubmit={handleSubmit}>
