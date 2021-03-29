@@ -1,8 +1,8 @@
 const RegisterSchema = {
   type: "object",
   properties: {
-    email: { type: "string" },
-    password: { type: "string" },
+    email: { type: "string", format: "email" },
+    password: { type: "string", minLength: 8 },
   },
   required: ["email", "password"],
   additionalProperties: false,

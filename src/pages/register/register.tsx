@@ -34,7 +34,9 @@ const Register = (): JSX.Element => {
           <input
             type="email"
             id="email"
+            required
             value={formFields.email}
+            aria-required="true"
             onChange={createChangeHandler("email")}
           />
         </label>
@@ -48,6 +50,7 @@ const Register = (): JSX.Element => {
             value={formFields.password}
             pattern=".{8,}"
             required
+            aria-required="true"
             title="8 characters minimum"
             onChange={createChangeHandler("password")}
           />
