@@ -46,6 +46,9 @@ const Register = (): JSX.Element => {
             type="password"
             id="password"
             value={formFields.password}
+            pattern=".{8,}"
+            required
+            title="8 characters minimum"
             onChange={createChangeHandler("password")}
           />
         </label>

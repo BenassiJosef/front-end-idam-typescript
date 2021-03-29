@@ -4,6 +4,7 @@ import {
   CHANGE_REGISTER_STATUS,
   RegisterActionsTypes,
 } from "./registerActions";
+import scrubPayload from "../../../__dataSchemas__/utils";
 
 type DispatchAppStatus = (arg: RegisterActionsTypes) => RegisterActionsTypes;
 
@@ -13,6 +14,8 @@ const registerActionCreator = async (
   baseUrl: string
 ): Promise<RegisterActionsTypes> => {
   try {
+    scrubPayload<IsRegisterState>(payload, "register");
+
     const { data, status } = await axios.post(`${baseUrl}/register`, {
       ...payload,
     });
@@ -21,7 +24,7 @@ const registerActionCreator = async (
       payload: { status, data },
     });
   } catch (error) {
-    //console.log(error);
+    console.error(error);
     return dispatch({
       type: CHANGE_REGISTER_STATUS,
       payload: { status: 200, data: { email: "", password: "" } },
