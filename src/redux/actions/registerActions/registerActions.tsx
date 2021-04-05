@@ -1,5 +1,9 @@
 export interface IsRegisterState {
+  name: string;
+  familyName: string;
   email: string;
+  username: string;
+  address: string;
   password: string;
 }
 

@@ -5,7 +5,11 @@ import {
 } from "../../actions/registerActions/registerActions";
 
 const initialState: IsRegisterState = {
+  name: "",
+  familyName: "",
   email: "",
+  username: "",
+  address: "",
   password: "",
 };
 

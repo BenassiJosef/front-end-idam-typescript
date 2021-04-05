@@ -27,7 +27,17 @@ const registerActionCreator = async (
     console.error(error);
     return dispatch({
       type: CHANGE_REGISTER_STATUS,
-      payload: { status: 200, data: { email: "", password: "" } },
+      payload: {
+        status: 404,
+        data: {
+          name: "",
+          familyName: "",
+          email: "",
+          username: "",
+          address: "",
+          password: "",
+        },
+      },
     });
   }
 };

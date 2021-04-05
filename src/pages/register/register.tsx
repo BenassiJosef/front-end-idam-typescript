@@ -14,7 +14,11 @@ const Register = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const { formFields, createChangeHandler } = useFormFields({
+    name: "",
+    familyName: "",
     email: "",
+    username: "",
+    address: "",
     password: "",
   });
 
@@ -29,6 +33,36 @@ const Register = (): JSX.Element => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
+        <label htmlFor="firstName">
+          First Name
+          <input
+            type="text"
+            id="firstName"
+            value={formFields.name}
+            pattern=".{1,}"
+            required
+            aria-required="true"
+            title="Cannot be empty"
+            onChange={createChangeHandler("name")}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="secondName">
+          Second Name
+          <input
+            type="text"
+            id="secondName"
+            value={formFields.familyName}
+            pattern=".{1,}"
+            required
+            aria-required="true"
+            title="Cannot be empty"
+            onChange={createChangeHandler("familyName")}
+          />
+        </label>
+      </div>
+      <div>
         <label htmlFor="email">
           Email
           <input
@@ -38,6 +72,31 @@ const Register = (): JSX.Element => {
             value={formFields.email}
             aria-required="true"
             onChange={createChangeHandler("email")}
+          />
+        </label>
+      </div>
+      <label htmlFor="username">
+        Username
+        <input
+          type="email"
+          id="username"
+          value={formFields.username}
+          required
+          onChange={createChangeHandler("username")}
+        />
+      </label>
+      <div>
+        <label htmlFor="address">
+          Address
+          <input
+            type="text"
+            id="address"
+            value={formFields.address}
+            pattern=".{1,}"
+            required
+            aria-required="true"
+            title="Cannot be empty"
+            onChange={createChangeHandler("address")}
           />
         </label>
       </div>

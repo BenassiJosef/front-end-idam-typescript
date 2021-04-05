@@ -1,5 +1,5 @@
 const IdamApiUrl = (): string => {
-  return "http://localhost:8000/api";
+  return "http://localhost:8000/api/v1";
 };
 
 export default IdamApiUrl;
