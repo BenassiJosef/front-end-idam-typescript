@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./button";
+import { Button } from "./Button";
 import { render } from "@testing-library/react";
 
 test("button component renders without crashing", () => {

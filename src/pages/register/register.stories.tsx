@@ -4,7 +4,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
-import Register from "./register";
+import Register from "./Register";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);

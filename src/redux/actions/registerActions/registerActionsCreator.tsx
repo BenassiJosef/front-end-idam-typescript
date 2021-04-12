@@ -24,7 +24,6 @@ const registerActionCreator = async (
       payload: { status, data },
     });
   } catch (error) {
-    console.error(error);
     return dispatch({
       type: CHANGE_REGISTER_STATUS,
       payload: {
