@@ -11,15 +11,14 @@ type WithChildren<T = Record<string, unknown>> = T & {
   formContent: React.ReactNode;
 };
 
-type FormProps = WithChildren<{
+export type FormProps = WithChildren<{
   onSubmit: (e: FormEvent<Element>) => void;
 }>;
 
-const Form = ({ onSubmit, formContent }: FormProps): JSX.Element => {
+export const Form = ({ onSubmit, formContent }: FormProps): JSX.Element => {
   return (
     <StlyedForm data-testid="form" onSubmit={onSubmit}>
       {formContent}
     </StlyedForm>
   );
 };
-export default Form;

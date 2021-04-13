@@ -12,12 +12,12 @@ const StyledLink = styled.a`
   }
 `;
 
-interface LinkProps {
+export interface LinkProps {
   text: string;
   href: string;
 }
 
-const Link = ({ text, href }: LinkProps): JSX.Element => {
+export const Link = ({ text, href }: LinkProps): JSX.Element => {
   return (
     <StyledLink aria-label="Link to login" href={href}>
       {" "}
@@ -25,5 +25,3 @@ const Link = ({ text, href }: LinkProps): JSX.Element => {
     </StyledLink>
   );
 };
-
-export default Link;

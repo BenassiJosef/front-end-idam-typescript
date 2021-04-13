@@ -22,7 +22,7 @@ const StyledWrapper = styled.div`
   padding-bottom: 16px;
 `;
 
-type InputProps = {
+export type InputProps = {
   label: string;
   pattern?: string;
   title?: string;
@@ -34,7 +34,7 @@ type InputProps = {
   req?: boolean | undefined;
 };
 
-const Input = ({
+export const Input = ({
   label,
   pattern,
   title,
@@ -70,5 +70,3 @@ Input.defaultProps = {
   title: "",
   req: false,
 };
-
-export default Input;

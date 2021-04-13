@@ -7,10 +7,10 @@ import { IsRegisterState } from "../../redux/actions/registerActions/registerAct
 import useFormFields from "../../hooks/useFormFields";
 import { Button } from "../../components/Button/Button";
 import IdamApiUrl from "../../utils";
-import Header from "../../components/Header/Header";
-import Form from "../../components/Form/Form";
-import Input from "../../components/Input/Input";
-import Link from "../../components/Link/Link";
+import { Header } from "../../components/Header/Header";
+import { Form } from "../../components/Form/Form";
+import { Input } from "../../components/Input/Input";
+import { Link } from "../../components/Link/Link";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -33,9 +33,7 @@ const Register = (): JSX.Element => {
     password: "",
   });
 
-  useEffect(() => {
-    // console.log(registerResp);
-  }, [registerResp]);
+  useEffect(() => {}, [registerResp]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +41,7 @@ const Register = (): JSX.Element => {
   };
   return (
     <>
-      <Header title="Register" />
+      <Header title="Register" background_color="#fdfdfd" color="#908f8f" />
       <Container>
         <Form
           onSubmit={handleSubmit}

@@ -1,6 +1,6 @@
 import React from "react";
-import Form from "./Form";
-import Input from "../../components/Input/Input";
+import { Form } from "./Form";
+import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";
 import { render, fireEvent } from "@testing-library/react";
 
