@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { Input, InputProps } from "./Input";
 
 export default {
-  title: "IDAM/Components/Header",
+  title: "IDAM/Components/Input",
   component: Input,
 } as Meta;
 

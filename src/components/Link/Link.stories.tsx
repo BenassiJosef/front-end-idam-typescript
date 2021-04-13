@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { Link, LinkProps } from "./Link";
 
 export default {
-  title: "IDAM/Components/Header",
+  title: "IDAM/Components/Link",
   component: Link,
 } as Meta;
 
