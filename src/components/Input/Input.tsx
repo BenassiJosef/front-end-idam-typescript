@@ -59,6 +59,7 @@ export const Input = ({
           type={type}
           value={value}
           id={id}
+          data-testid="test-input"
         />
       </StyledLabel>
     </StyledWrapper>

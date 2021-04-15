@@ -22,6 +22,7 @@ Object {
             <input
               aria-required="true"
               class="sc-gsTCUz bhRCdu"
+              data-testid="test-input"
               id="test"
               pattern=".{2,}"
               required=""
@@ -59,6 +60,7 @@ Object {
           <input
             aria-required="true"
             class="sc-gsTCUz bhRCdu"
+            data-testid="test-input"
             id="test"
             pattern=".{2,}"
             required=""

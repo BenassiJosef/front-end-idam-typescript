@@ -17,6 +17,7 @@ Object {
           <input
             aria-required="true"
             class="sc-bdfBwQ cZpDYa"
+            data-testid="test-input"
             id="name"
             pattern=".{2,}"
             required=""
@@ -41,6 +42,7 @@ Object {
         <input
           aria-required="true"
           class="sc-bdfBwQ cZpDYa"
+          data-testid="test-input"
           id="name"
           pattern=".{2,}"
           required=""

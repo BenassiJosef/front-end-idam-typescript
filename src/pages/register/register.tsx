@@ -18,13 +18,22 @@ const Container = styled.div`
   max-width: 600px;
 `;
 
+interface RegisterFields {
+  name: string;
+  familyName: string;
+  email: string;
+  username: string;
+  address: string;
+  password: string;
+}
+
 const Register = (): JSX.Element => {
   const registerResp: IsRegisterState = useSelector(
     (state: RootState) => state.register
   );
   const dispatch = useDispatch();
 
-  const { formFields, createChangeHandler } = useFormFields({
+  const { formFields, createChangeHandler } = useFormFields<RegisterFields>({
     name: "",
     familyName: "",
     email: "",

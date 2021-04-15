@@ -1,0 +1,35 @@
+import React from "react";
+import useFormFields from "./useFormFields";
+import { renderHook } from "@testing-library/react-hooks";
+import { Input } from "../components/Input/Input";
+import { render, fireEvent } from "@testing-library/react";
+
+test("useFormFields hooks outputs object with key + value as expected", () => {
+  const { result } = renderHook(() =>
+    useFormFields<TestFields>({
+      test: "",
+    })
+  );
+  const { getByTestId } = render(
+    <Input
+      label="Test"
+      type="text"
+      value={result.current.formFields.test}
+      pattern=".{2,}"
+      title="need a test"
+      id="test"
+      onChange={result.current.createChangeHandler("test")}
+      htmlFor="test"
+      req
+    />
+  );
+
+  interface TestFields {
+    test: string;
+  }
+
+  fireEvent.change(getByTestId("test-input"), {
+    target: { value: "im test value fired input" },
+  });
+  expect(result.current.formFields.test).toBe("im test value fired input");
+});
