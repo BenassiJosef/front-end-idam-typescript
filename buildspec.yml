@@ -3,12 +3,11 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 12
+      nodejs: 10
     commands:
-      - npm install
+      - npm ci
   build:
     commands:
-      - ls
       - npm run-script build
 
 artifacts:
