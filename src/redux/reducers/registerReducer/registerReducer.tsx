@@ -13,10 +13,21 @@ const initialState: IsRegisterState = {
   password: "",
 };
 
+interface ReducerInterface {
+  name: string;
+  familyName: string;
+  email: string;
+  username: string;
+  address: string;
+  password: string;
+  status: number | undefined;
+  data: IsRegisterState;
+}
+
 const registerReducer = (
   state = initialState,
   action: RegisterActionsTypes
-): IsRegisterState => {
+): ReducerInterface => {
   switch (action.type) {
     case CHANGE_REGISTER_STATUS:
       return {
@@ -25,7 +36,10 @@ const registerReducer = (
       };
 
     default:
-      return state;
+      return {
+        ...state,
+        ...action.payload,
+      };
   }
 };
 
