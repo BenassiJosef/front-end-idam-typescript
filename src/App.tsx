@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Register from "./pages/Register/Register";
+import Register from "./pages/cdscsdc/Register";
 import GlobalStyle from "./components/GlobalStyle/GlobalStyle";
 
 function App(): JSX.Element {
