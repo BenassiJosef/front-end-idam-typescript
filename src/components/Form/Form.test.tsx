@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "./Form";
 import { Input } from "../../components/Input/Input";
-import { Button } from "../dfdfd/fdfdfdf.";
+import { Button } from "../Button/Button";
 import { render, fireEvent } from "@testing-library/react";
 
 const mockCallback = jest.fn((x: React.FormEvent) => {

@@ -5,7 +5,7 @@ import { RootState } from "../../redux/reducers/rootReducer";
 import registerActionCreator from "../../redux/actions/registerActions/registerActionsCreator";
 import { IsRegisterState } from "../../redux/actions/registerActions/registerActions";
 import useFormFields from "../../hooks/useFormFields";
-import { Button } from "../../components/dfdfd/fdfdfdf.";
+import { Button } from "../../components/Button/Button";
 import IdamApiUrl from "../../utils";
 import { Header } from "../../components/Header/Header";
 import { Form } from "../../components/Form/Form";

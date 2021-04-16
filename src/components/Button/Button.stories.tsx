@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { Button, Props } from "./fdfdfdf.";
+import { Button, Props } from "./Button";
 
 export default {
   title: "IDAM/Components/Button",
