@@ -7,7 +7,7 @@ import { render } from "@testing-library/react";
 
 const mockStore = configureMockStore([thunk]);
 
-test("register component renders without crashing", () => {
+test("register component render without crashing", () => {
   const store = mockStore({});
   const wrapper = render(
     <Provider store={store}>
