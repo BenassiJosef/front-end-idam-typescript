@@ -8,6 +8,7 @@ phases:
       - npm install
   build:
     commands:
+      - ls
       - npm run build
 
 artifacts:
