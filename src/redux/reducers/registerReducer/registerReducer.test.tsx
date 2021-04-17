@@ -17,6 +17,5 @@ test("that registerReducer function returns state", () => {
     payload: { status: 200, data: payload },
   });
 
-  console.log(data);
   expect(data).toEqual(payload);
 });

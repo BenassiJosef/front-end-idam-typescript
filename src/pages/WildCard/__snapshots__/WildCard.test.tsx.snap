@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`header component renders without crashing 1`] = `
+exports[`wild card component render without crashing 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <header
-        class="sc-bdfBwQ daRXpv"
-        color="black"
+        class="sc-bdfBwQ mRGRE"
+        color="#908f8f"
       >
         <div
           class="sc-dlfnbm"
@@ -15,7 +15,7 @@ Object {
           <h1
             class="sc-gsTCUz"
           >
-            Test
+            Page Not Found
           </h1>
         </div>
       </header>
@@ -23,8 +23,8 @@ Object {
   </body>,
   "container": <div>
     <header
-      class="sc-bdfBwQ daRXpv"
-      color="black"
+      class="sc-bdfBwQ mRGRE"
+      color="#908f8f"
     >
       <div
         class="sc-dlfnbm"
@@ -32,7 +32,7 @@ Object {
         <h1
           class="sc-gsTCUz"
         >
-          Test
+          Page Not Found
         </h1>
       </div>
     </header>
