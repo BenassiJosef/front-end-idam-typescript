@@ -8,8 +8,8 @@ phases:
       - npm ci
   build:
     commands:
-      - npm run build
       - npm run test -- --ci --watchAll=false
+      - npm run build
 
 artifacts:
   base-directory: ./build
