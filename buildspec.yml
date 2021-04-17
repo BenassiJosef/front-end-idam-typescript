@@ -8,7 +8,12 @@ phases:
       - npm ci
   build:
     commands:
-      - npm run-script build
+      - echo Running the unit the tests...
+      - npm run test
+      - echo Testing has completed ...
+      - echo Running the build  ...
+      - npm run build
+      - echo Build has completed ...
 
 artifacts:
   base-directory: ./build
