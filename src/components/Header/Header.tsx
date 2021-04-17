@@ -20,6 +20,7 @@ const StyledHeader = styled.header`
     color.length >= 1 ? color : "white"};
   background-color: ${({ background_color }: StyledHeaderProps) =>
     background_color.length >= 1 ? background_color : "white"};
+  margin-bottom: 30px;
 `;
 
 const StyledH1 = styled.h1``;

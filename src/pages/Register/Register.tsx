@@ -80,21 +80,25 @@ const Register = (): JSX.Element => {
               />
               <Input
                 label="Email"
-                type="email"
+                type="text"
                 value={formFields.email}
                 id="email"
+                pattern=".{5,}"
                 onChange={createChangeHandler("email")}
                 htmlFor="email"
                 req
+                title="Amount of character to construct email"
               />
               <Input
                 label="Username"
                 type="email"
                 value={formFields.username}
                 id="username"
+                pattern=".{5,}"
                 onChange={createChangeHandler("username")}
                 htmlFor="username"
                 req
+                title="Amount of character to construct email"
               />
               <Input
                 label="Address"
