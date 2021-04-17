@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - npm run build
-      - npm run test
+      - npm run test -- --ci --watchAll=false
 
 artifacts:
   base-directory: ./build
