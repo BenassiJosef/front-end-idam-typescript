@@ -50,7 +50,7 @@ const Register = (): JSX.Element => {
   };
   return (
     <>
-      <Header title="Register" background_color="#fdfdfd" color="#908f8f" />
+      <Header title="Register!" background_color="#fdfdfd" color="#908f8f" />
       <Container>
         <Form
           onSubmit={handleSubmit}
