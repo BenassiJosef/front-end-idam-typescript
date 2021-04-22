@@ -15,6 +15,7 @@
     "axios": "^0.21.1",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "history": "^5.0.0",
     "jest-mock-axios": "^4.3.0",
     "joi": "^17.4.0",
     "msw": "^0.28.0",

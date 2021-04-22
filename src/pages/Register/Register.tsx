@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import styled from "styled-components";
 import { RootState } from "../../redux/reducers/rootReducer";
 import registerActionCreator from "../../redux/actions/registerActions/registerActionsCreator";
 import { IsRegisterState } from "../../redux/actions/registerActions/registerActions";
@@ -11,12 +11,7 @@ import { Header } from "../../components/Header/Header";
 import { Form } from "../../components/Form/Form";
 import { Input } from "../../components/Input/Input";
 import { Link } from "../../components/Link/Link";
-
-const Container = styled.div`
-  margin: 0 auto;
-  width: 85%;
-  max-width: 600px;
-`;
+import Container from "../../components/Container/Container";
 
 interface RegisterFields {
   name: string;
@@ -32,6 +27,7 @@ const Register = (): JSX.Element => {
     (state: RootState) => state.register
   );
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const { formFields, createChangeHandler } = useFormFields<RegisterFields>({
     name: "",
@@ -46,11 +42,11 @@ const Register = (): JSX.Element => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    registerActionCreator(dispatch, formFields, IdamApiUrl());
+    registerActionCreator(dispatch, formFields, IdamApiUrl(), history);
   };
   return (
     <>
-      <Header title="Register" background_color="#fdfdfd" color="#908f8f" />
+      <Header title="Register" />
       <Container>
         <Form
           onSubmit={handleSubmit}

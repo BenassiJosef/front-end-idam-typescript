@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 export type HeaderProps = {
   title: string;
-  background_color: string;
-  color: string;
+  backgroundColor?: string | undefined;
+  color?: string | undefined;
 };
 
 type StyledHeaderProps = {
-  background_color: string;
-  color: string;
+  backgroundColor?: string | undefined;
+  color?: string | undefined;
 };
 
 const StyledHeader = styled.header`
@@ -17,9 +17,11 @@ const StyledHeader = styled.header`
   justify-content: center;
   width: 100%;
   color: ${({ color }: StyledHeaderProps) =>
-    color.length >= 1 ? color : "white"};
-  background-color: ${({ background_color }: StyledHeaderProps) =>
-    background_color.length >= 1 ? background_color : "white"};
+    color && color.length >= 1 ? color : "#908f8f"};
+  background-color: ${({ backgroundColor }: StyledHeaderProps) =>
+    backgroundColor && backgroundColor.length >= 1
+      ? backgroundColor
+      : "#fdfdfd"};
   margin-bottom: 30px;
 `;
 
@@ -28,14 +30,19 @@ const StyledDiv = styled.div``;
 
 export const Header = ({
   title,
-  background_color,
+  backgroundColor,
   color,
 }: HeaderProps): JSX.Element => {
   return (
-    <StyledHeader color={color} background_color={background_color}>
+    <StyledHeader color={color} backgroundColor={backgroundColor}>
       <StyledDiv>
         <StyledH1>{title}</StyledH1>
       </StyledDiv>
     </StyledHeader>
   );
+};
+
+Header.defaultProps = {
+  backgroundColor: "#fdfdfd",
+  color: "#908f8f",
 };

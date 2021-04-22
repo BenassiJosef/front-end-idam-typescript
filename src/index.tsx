@@ -7,9 +7,9 @@ import { Provider } from "react-redux";
 import App from "./App";
 import store from "./redux/store/store";
 
-// if (process.env.NODE_ENV === "development") {
-//   require("./__msw__/browser");
-// }
+if (process.env.NODE_ENV === "development") {
+  require("./__msw__/browser");
+}
 
 ReactDOM.render(
   <React.StrictMode>

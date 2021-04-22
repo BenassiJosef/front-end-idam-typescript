@@ -9,17 +9,17 @@ export default {
 
 const Template: Story<HeaderProps> = ({
   title,
-  background_color,
+  backgroundColor,
   color,
 }: HeaderProps) => {
   return (
-    <Header title={title} background_color={background_color} color={color} />
+    <Header title={title} backgroundColor={backgroundColor} color={color} />
   );
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
   title: "This is a Header",
-  background_color: "green",
+  backgroundColor: "green",
   color: "pink",
 };
