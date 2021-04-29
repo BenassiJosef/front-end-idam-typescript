@@ -1,9 +1,20 @@
 import registerActionCreator from "./registerActionsCreator";
 import { CHANGE_REGISTER_STATUS } from "./registerActions";
 import mockAxios from "jest-mock-axios";
+import { useHistory } from "react-router-dom";
 
 const url = "http://testUrl/api/v1";
 const myMock = jest.fn();
+
+const mockHistoryPush = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  useHistory: () => ({
+    push: jest.fn(),
+  }),
+}));
+
+const history = useHistory();
 
 describe("post registration info to server", () => {
   it("should make post request", () => {
@@ -20,7 +31,7 @@ describe("post registration info to server", () => {
       payload,
     };
     myMock.mockReturnValueOnce(expectedAction);
-    registerActionCreator(myMock, payload, url);
+    registerActionCreator(myMock, payload, url, history);
     expect(mockAxios.post).toHaveBeenCalledWith(`${url}/register`, {
       name: payload.name,
       familyName: payload.familyName,
@@ -47,7 +58,7 @@ describe("function makes no post if data/payload is not correct", () => {
       payload,
     };
     myMock.mockReturnValueOnce(expectedAction);
-    registerActionCreator(myMock, payload, url);
+    registerActionCreator(myMock, payload, url, history);
     expect(mockAxios.post).toHaveBeenCalledTimes(0);
   });
 });
