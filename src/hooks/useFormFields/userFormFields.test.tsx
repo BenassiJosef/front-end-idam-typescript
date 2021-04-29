@@ -2,7 +2,7 @@ import React from "react";
 import { renderHook } from "@testing-library/react-hooks";
 import { render, fireEvent } from "@testing-library/react";
 import useFormFields from "./useFormFields";
-import { Input } from "../components/Input/Input";
+import { Input } from "../../components/Input/Input";
 
 test("useFormFields hooks outputs object with key + value as expected", () => {
   const { result } = renderHook(() =>
