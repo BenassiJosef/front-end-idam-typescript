@@ -12,12 +12,12 @@ type DispatchAppStatus = (arg: RegisterActionsTypes) => RegisterActionsTypes;
 
 const registerActionCreator = async (
   dispatch: DispatchAppStatus,
-  payload: Record<string, string>,
+  payload: IsRegisterState,
   baseUrl: string,
   history: History
 ): Promise<RegisterActionsTypes> => {
   try {
-    scrubPayload<Record<string, unknown>>(payload, payload.event);
+    scrubPayload<IsRegisterState>(payload, "register");
 
     const { data, status } = await axios.post(`${baseUrl}/register`, {
       ...payload,
