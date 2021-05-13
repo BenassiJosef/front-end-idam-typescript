@@ -9,7 +9,7 @@ const verifySignUpSchema = {
     email: { type: "string", format: "email" },
     event: { type: "string", minLength: 5 },
   },
-  required: ["code", "userName", "userpool", "clientId", "email", "event"],
+  required: ["code", "username", "userpool", "clientId", "email", "event"],
   additionalProperties: false,
 };
 
