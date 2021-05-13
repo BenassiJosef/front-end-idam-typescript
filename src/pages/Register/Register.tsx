@@ -46,7 +46,7 @@ const Register = (): JSX.Element => {
   };
   return (
     <>
-      <Header title="Register" />
+      <Header title="Andy Pandy" />
       <Container>
         <Form
           onSubmit={handleSubmit}
