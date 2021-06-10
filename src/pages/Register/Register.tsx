@@ -42,7 +42,12 @@ const Register = (): JSX.Element => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    registerActionCreator(dispatch, formFields, IdamApiUrl(), history);
+    registerActionCreator(
+      dispatch,
+      formFields,
+      IdamApiUrl(window.location.origin),
+      history
+    );
   };
   return (
     <>

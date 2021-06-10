@@ -43,7 +43,7 @@ const Verify = (): JSX.Element => {
     verifyActionCreator(
       () => {},
       history,
-      IdamApiUrl(),
+      IdamApiUrl(window.location.origin),
       checkQueryParams(location)
     );
   }, [history, location]);
