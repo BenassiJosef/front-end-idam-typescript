@@ -40,23 +40,3 @@ describe("post registration info to server", () => {
     });
   });
 });
-
-describe("function makes no post if data/payload is not correct", () => {
-  it("should make post request", () => {
-    const payload = {
-      name: "test",
-      familyName: "",
-      email: "test@test.com",
-      username: "testtest.com",
-      address: "lane123456",
-      password: "test1234",
-    };
-    const expectedAction = {
-      type: CHANGE_REGISTER_STATUS,
-      payload,
-    };
-    myMock.mockReturnValueOnce(expectedAction);
-    registerActionCreator(myMock, payload, url, history);
-    expect(mockAxios.post).toHaveBeenCalledTimes(0);
-  });
-});
