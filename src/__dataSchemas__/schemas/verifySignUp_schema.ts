@@ -6,7 +6,10 @@ const verifySignUpSchema = {
     username: { type: "string", length: 36 },
     userpool: { type: "string", length: 26 },
     clientId: { type: "string", minLength: 1 },
-    email: { type: "string", format: "email" },
+    email: {
+      type: "string",
+      format: "email",
+    },
     event: { type: "string", minLength: 5 },
   },
   required: ["code", "username", "userpool", "clientId", "email", "event"],

@@ -1,31 +1,43 @@
 import axios from "axios";
+import { History } from "history";
 import scrubPayload from "../../../__dataSchemas__/utils";
+import { VerifyActionsTypes, VERIFY_STATUS } from "./verifyActions";
+import { VerifySignUpInterface } from "../../../interfaces/interfaces";
+
+type DispatchAppStatus = (arg: VerifyActionsTypes) => VerifyActionsTypes;
 
 const verifyActionCreator = async (
-  dispatch: any,
-  history: any,
+  dispatch: DispatchAppStatus,
+  history: History,
   baseUrl: string,
-  payload: any
+  payload: VerifySignUpInterface | undefined
 ): Promise<any> => {
-  const { parameters, values } = payload;
-
-  if (!parameters) {
-    history.push("/error");
-  }
-
-  // ************ schema is not liking it when there is a plus symbol in email check this out !!!! */
   try {
-    // we can pass the event type to get the correct schema seeing as this verify function will do all types of verification.
-    // so for example if the event type is verifySignUp then we will pass it to scrub payload as the shcema we want to check against
-    scrubPayload(values, values.event);
-    const { data, status } = await axios.post(`${baseUrl}/register`, {
-      ...payload,
-    });
-    if (status === 200) {
-      console.log("well we made it here");
+    if (payload) {
+      scrubPayload(payload, payload.event);
+      const { status } = await axios.post(`${baseUrl}/verify`, {
+        ...payload,
+      });
+      if (status === 200) {
+        dispatch({
+          type: VERIFY_STATUS,
+          payload: { status: 200 },
+        });
+        history.push("/success");
+      } else {
+        dispatch({
+          type: VERIFY_STATUS,
+          payload: { status },
+        });
+        history.push("/error");
+      }
     }
   } catch (error) {
     console.log(error);
+    dispatch({
+      type: VERIFY_STATUS,
+      payload: { status: 404 },
+    });
   }
 };
 
