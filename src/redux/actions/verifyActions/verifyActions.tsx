@@ -2,10 +2,10 @@ export interface VerifyPost {
   status: number;
 }
 
-export const VERIFICATION_STATUS = "VERIFICATION_STATUS";
+export const VERIFY_STATUS = "CHANGE_REGISTER_STATUS ";
 
 interface VerifyStatus {
-  type: typeof VERIFICATION_STATUS;
+  type: typeof VERIFY_STATUS;
   payload: VerifyPost;
 }
 

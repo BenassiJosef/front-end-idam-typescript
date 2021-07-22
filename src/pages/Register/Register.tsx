@@ -81,7 +81,7 @@ const Register = (): JSX.Element => {
               />
               <Input
                 label="Email"
-                type="text"
+                type="email"
                 value={formFields.email}
                 id="email"
                 pattern=".{5,}"

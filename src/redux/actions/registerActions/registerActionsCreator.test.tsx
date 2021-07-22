@@ -6,8 +6,6 @@ import { useHistory } from "react-router-dom";
 const url = "http://testUrl/api/v1";
 const myMock = jest.fn();
 
-const mockHistoryPush = jest.fn();
-
 jest.mock("react-router-dom", () => ({
   useHistory: () => ({
     push: jest.fn(),
